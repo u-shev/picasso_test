@@ -1,0 +1,6 @@
+.env
+/mediafiles
+/staticfiles
+upload/__pycache__/
+upload/upload/__pycache__/
+upload/files/__pycache__/

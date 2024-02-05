@@ -94,7 +94,6 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'PORT': '5432',
     }
 }
 
@@ -133,9 +132,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
 MEDIA_URL = '/media/'
+
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = "redis://redis:6379/0"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
